@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import {Navbar, Nav} from "react-bootstrap"
 import styles from "./Navbar.module.scss"
@@ -10,7 +11,7 @@ export default function NavBar(props) {
     return(
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Navbar.Brand href="#home">
-                <img
+                <Image
                     src="/logo.png"
                     width="30"
                     height="30"
@@ -39,7 +40,7 @@ export default function NavBar(props) {
                 <Nav>
                     <Nav.Link eventKey={2} href="#memes">
                         <Navbar.Brand href="#home">
-                            <img
+                            <Image
                                 src="/panier2.png"
                                 width="30"
                                 height="30"

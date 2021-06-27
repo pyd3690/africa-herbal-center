@@ -1,11 +1,12 @@
 import {Navbar, Nav} from "react-bootstrap"
+import Image from 'next/image'
 import styles from "./Footer.module.scss"
 
 export default function FooterBar() {
     return(
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Navbar.Brand href="#home" className="ml-auto mr-2">
-                <img
+                <Image
                     src="/logo.png"
                     width="30"
                     height="30"
