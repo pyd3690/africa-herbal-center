@@ -1,0 +1,21 @@
+/* @import "~bootstrap/scss/bootstrap";
+ */
+
+ .footerText {
+     margin-right: auto;
+     font-size: 17px;
+ }
+
+ .author{
+     font-size: 14px;
+ }
+
+ @media (max-width: 767px){
+    .footerText {
+        font-size: 14px;
+    }
+   
+    .author{
+        font-size: 12px;
+    }
+ }
