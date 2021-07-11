@@ -2,11 +2,11 @@ import Prismic from "prismic-javascript";
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import HeroSection from '../components/home/heroSection/Hero.js'
 import { Client } from "../prismic-configuration.js";
+import HeroSection from '../components/home/heroSection/Hero.js'
+import PresentationSection from '../components/home/presentation/Presentation.js'
 
-
-export default function Home({slides}) {
+export default function Home({slides, presentation}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,8 +17,8 @@ export default function Home({slides}) {
 
       <main className={styles.main}>
         <HeroSection slides={slides} />
+        <PresentationSection information={presentation} />
         <div style={{height: "500px"}}>
-                    
         </div>
 
         
@@ -33,6 +33,9 @@ export async function getStaticProps() {
   const slides0 = await Client().query(
     Prismic.Predicates.at("document.type", "slides")
   );
+  const presentation0 =  await Client().query(
+    Prismic.Predicates.at("document.type", "presentation")
+  );
 
   const slides = slides0.results.map(slide => {
     const container = {};
@@ -42,11 +45,20 @@ export async function getStaticProps() {
     container['picture'] = slide.data.picture.url;
     return container;
   })
-  console.log(slides);
+
+  const presentation = presentation0.results.map(info => {
+    const container = {};
+    container['id'] = info.id;
+    container['text'] = info.data.info;
+    container['picture'] = info.data.picture.url;
+    return container;
+  })[0]
+  //console.log(presentation);
   
   return {
     props: {
       slides,
+      presentation,
     },
     revalidate: 10, // In seconds
   }
