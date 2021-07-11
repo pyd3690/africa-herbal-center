@@ -6,8 +6,9 @@ import { Client } from "../prismic-configuration.js";
 import HeroSection from '../components/home/heroSection/Hero.js'
 import PresentationSection from '../components/home/presentation/Presentation.js'
 import ProductRowSection from '../components/home/products/ProductRow.js'
+import ArticleRowSection from '../components/home/blog/ArticlesRow.js'
 
-export default function Home({slides, presentation, products}) {
+export default function Home({slides, presentation, products, articles}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -20,6 +21,7 @@ export default function Home({slides, presentation, products}) {
         <HeroSection slides={slides} />
         <PresentationSection information={presentation} />
         <ProductRowSection products={products} />
+        <ArticleRowSection articles={articles} />
         <div style={{height: "200px"}}>
         </div>
 
@@ -41,6 +43,9 @@ export async function getStaticProps() {
   const products0 = await Client().query(
     Prismic.Predicates.at("document.type", "product")
   );
+  const articles0 = await Client().query(
+    Prismic.Predicates.at("document.type", "article")
+  );
 
   const slides = slides0.results.map(slide => {
     const container = {};
@@ -57,8 +62,7 @@ export async function getStaticProps() {
     container['text'] = info.data.info;
     container['picture'] = info.data.picture.url;
     return container;
-  })[0]
- 
+  })[0] 
 
   const products = products0.results.slice(0, 3).map(info => {
     const container = {};
@@ -66,8 +70,21 @@ export async function getStaticProps() {
     container['name'] = info.data.name;
     container['picture'] = info.data.picture.url;
     container['category'] = info.data.category;
+    container['price'] = info.data.price;
     container['slug'] = info.slugs[0];
     container['description'] = info.data.description;
+    return container;
+  }) 
+
+  const articles = articles0.results.slice(0, 3).map(info => {
+    const container = {};
+    container['id'] = info.id;
+    container['title'] = info.data.title;
+    container['picture'] = info.data.picture.url;
+    container['category'] = info.data.category;
+    container['date'] = info.last_publication_date;
+    container['slug'] = info.slugs[0];
+    container['content'] = info.data.content;
     return container;
   })
   //console.log(products);
@@ -77,6 +94,7 @@ export async function getStaticProps() {
       slides,
       presentation,
       products,
+      articles,
     },
     revalidate: 10, // In seconds
   }

@@ -81,6 +81,10 @@ $green-back-info: #d8f0ea;
         height: $height-section-content-tablet;
         
     }
+
+    .InfoText{
+        font-size: $info-text-fontsize-mobile;
+    }
 }
 
 @media (max-width: 767px){
