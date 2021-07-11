@@ -26,7 +26,7 @@ export default function ProductRowSection(props) {
                 {RichText.render(card.description)}
             </Card.Text>
         }        
-        <Link href={"/store" /*"/products/"+card.id*/}> 
+        <Link href={"/store" /*"/products/"+card.id*/} passHref> 
             <Button variant="success" >Voir</Button>
         </Link>        
         </Card.Body>

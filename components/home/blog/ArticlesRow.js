@@ -32,7 +32,7 @@ export default function ArticleRowSection(props) {
                 {RichText.render(card.content)}
             </Card.Text>
         }        
-        <Link href={"/blog" /*"/products/"+card.id*/}> 
+        <Link href={"/blog" /*"/products/"+card.id*/} passHref> 
             <Button variant="success" >Lire</Button>
         </Link>        
         </Card.Body>
