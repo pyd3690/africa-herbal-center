@@ -5,7 +5,7 @@ import {Alert, Button, Form, FormControl, ListGroup} from "react-bootstrap"
 import styles from "./ContactSection.module.scss"
 
 
-export default function ContactSection(props) {
+export default function ContactSection() {
     const [showConfirmation, setshowConfirmation] = useState(false);
     const [type, setType] = useState('Requete/info');
     const [data, setData] = useState({
