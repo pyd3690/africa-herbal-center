@@ -14,8 +14,8 @@ export default function COntactSection(props) {
         <div className={styles.section}>
             <div className={styles.container}>
             <Jumbotron style={{backgroundColor:'#d8f0ea'}}>
-                <h2 className={styles.title}>Besoin d'un traitement naturel ou d'une consultation?</h2>
-                <h3 className={styles.action}>N'hesitez pas a nous contacter</h3>
+                <h2 className={styles.title}>Besoin d&apos;un traitement naturel ou d&apos;une consultation?</h2>
+                <h3 className={styles.action}>N&apos;hesitez pas a nous contacter</h3>
                 <p>
                 <Link href={"/contact"} passHref><Button variant="success">Nous Contacter</Button></Link>
                 </p>
