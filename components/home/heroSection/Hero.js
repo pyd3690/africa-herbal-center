@@ -1,7 +1,7 @@
 import Link from 'next/link'
 //import Image from 'next/image'
 import {Carousel, Image} from "react-bootstrap"
-import styles from "./hero.module.scss"
+import styles from "./Hero.module.scss"
 
 
 export default function HeroSection(props) {
