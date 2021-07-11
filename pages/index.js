@@ -7,6 +7,7 @@ import HeroSection from '../components/home/heroSection/Hero.js'
 import PresentationSection from '../components/home/presentation/Presentation.js'
 import ProductRowSection from '../components/home/products/ProductRow.js'
 import ArticleRowSection from '../components/home/blog/ArticlesRow.js'
+import ContactSection from '../components/home/contact/Contact.js'
 
 export default function Home({slides, presentation, products, articles}) {
   return (
@@ -22,9 +23,7 @@ export default function Home({slides, presentation, products, articles}) {
         <PresentationSection information={presentation} />
         <ProductRowSection products={products} />
         <ArticleRowSection articles={articles} />
-        <div style={{height: "200px"}}>
-        </div>
-
+        <ContactSection />
         
       </main>
 
