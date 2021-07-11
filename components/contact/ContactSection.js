@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import {useState} from "react"
-//import Image from 'next/image'
+import Image from 'next/image'
 import {Alert, Button, Form, FormControl, ListGroup} from "react-bootstrap"
 import styles from "./ContactSection.module.scss"
 
@@ -147,7 +147,7 @@ export default function ContactSection(props) {
             <ListGroup>
                 <ListGroup.Item className={styles.listItem}>
                     <div style={{}}>
-                        <img className={styles.iconC}
+                        <Image className={styles.iconC}
                             src="/icons/company.png"
                             width="auto"
                             height="20px"
@@ -159,7 +159,7 @@ export default function ContactSection(props) {
                 </ListGroup.Item>
                 <ListGroup.Item className={styles.listItem}>
                     <div style={{}}>
-                        <img className={styles.iconC}
+                        <Image className={styles.iconC}
                             src="/icons/address.png"
                             width="auto"
                             height="20px"
@@ -171,7 +171,7 @@ export default function ContactSection(props) {
                 </ListGroup.Item>
                 <ListGroup.Item className={styles.listItem}>
                     <div style={{}}>
-                        <img className={styles.iconC}
+                        <Image className={styles.iconC}
                             src="/icons/phone.png"
                             width="auto"
                             height="20px"
@@ -183,7 +183,7 @@ export default function ContactSection(props) {
                 </ListGroup.Item>
                 <ListGroup.Item className={styles.listItem}>
                     <div style={{}}>
-                        <img className={styles.iconC}
+                        <Image className={styles.iconC}
                             src="/icons/whatsapp.png"
                             width="auto"
                             height="20px"
@@ -195,7 +195,7 @@ export default function ContactSection(props) {
                 </ListGroup.Item>
                 <ListGroup.Item className={styles.listItem}>
                     <div style={{}}>
-                        <img className={styles.iconC}
+                        <Image className={styles.iconC}
                             src="/icons/facebook.png"
                             width="auto"
                             height="20px"
@@ -207,7 +207,7 @@ export default function ContactSection(props) {
                 </ListGroup.Item>
                 <ListGroup.Item className={styles.listItem}>
                     <div style={{}}>
-                        <img className={styles.iconC}
+                        <Image className={styles.iconC}
                             src="/icons/email.png"
                             width="auto"
                             height="20px"
