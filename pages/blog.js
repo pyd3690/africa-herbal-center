@@ -2,7 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Store() {
+import Prismic from "prismic-javascript";
+import { Client } from "../prismic-configuration.js";
+
+import CoverSection from '../components/cover/Cover.js'
+import ArticleRowSection from '../components/blog/ArticlesRow.js'
+
+
+export default function Store({coverPicture, articles}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,16 +19,49 @@ export default function Store() {
       </Head>
 
       <main className={styles.main}>
-        <div style={{height: "700px"}}>
-          <h3 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Decouverte!</a>
-          </h3>
-        </div>
-
-        
-      </main>
-
-      
+        <CoverSection imageData={coverPicture}/>
+        <ArticleRowSection articles={articles} />
+        <div style={{height: "200px"}}>
+        </div>        
+      </main>      
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const coverPicture0 = await Client().query(
+    Prismic.Predicates.at("document.type", "blog_cover")
+  );
+  const articles0 = await Client().query(
+    Prismic.Predicates.at("document.type", "article")
+  );
+
+  const coverPicture = coverPicture0.results.map(info => {
+    const container = {};
+    container['id'] = info.id;
+    container['url'] = info.data.picture.url;
+    return container;
+  })[0] 
+
+  const articles = articles0.results.slice(0, 3).map(info => {
+    const container = {};
+    container['id'] = info.id;
+    container['title'] = info.data.title;
+    container['picture'] = info.data.picture.url;
+    container['category'] = info.data.category;
+    container['date'] = info.last_publication_date;
+    container['slug'] = info.slugs[0];
+    container['content'] = info.data.content;
+    return container;
+  })
+
+  //console.log(coverPicture);
+  
+  return {
+    props: {
+      coverPicture,
+      articles,
+    },
+    revalidate: 10, // In seconds
+  }
 }

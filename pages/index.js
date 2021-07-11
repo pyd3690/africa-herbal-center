@@ -1,8 +1,10 @@
-import Prismic from "prismic-javascript";
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+
+import Prismic from "prismic-javascript";
 import { Client } from "../prismic-configuration.js";
+
 import HeroSection from '../components/home/heroSection/Hero.js'
 import PresentationSection from '../components/home/presentation/Presentation.js'
 import ProductRowSection from '../components/home/products/ProductRow.js'
