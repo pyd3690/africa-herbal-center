@@ -4,7 +4,7 @@ import styles from "./Footer.module.scss"
 
 export default function FooterBar() {
     return(
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg" variant="light" className={styles.container}>
             <Navbar.Brand href="#home" className="ml-auto mr-2">
                 <Image
                     src="/logo.png"

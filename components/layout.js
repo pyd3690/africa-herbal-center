@@ -8,7 +8,7 @@ export default function Layout ({children}){
             <div className={styles.navbar}>
                 <NavBar totalBasket="0"/>
             </div>
-            {children}
+            <div>{children}</div>
             <div className={styles.footer}>
                 <FooterBar />
             </div>

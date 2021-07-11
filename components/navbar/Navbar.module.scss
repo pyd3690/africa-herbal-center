@@ -1,10 +1,15 @@
 /* @import "~bootstrap/scss/bootstrap";
  */
 
- $green-title: #3EB595;
+ $container-background: #edf5ef;
+ $green-title: #668C4A;//#3EB595;
  $green-selected-back-item: #d8f0ea;
  $green-selected-item: #2b7f68;
  $green-hover-item: #3eb595;
+
+ .container{
+     background-color: $container-background;
+ }
 
  .title{
      color: $green-title;

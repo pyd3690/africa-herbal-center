@@ -9,7 +9,7 @@ export default function NavBar(props) {
     const currentRoute = router.asPath
 
     return(
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg"  variant="light" className={styles.container}>
             <Navbar.Brand href="#home">
                 <Image
                     src="/logo.png"

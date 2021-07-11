@@ -1,8 +1,12 @@
+import Prismic from "prismic-javascript";
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import HeroSection from '../components/home/heroSection/Hero.js'
+import { Client } from "../prismic-configuration.js";
 
-export default function Home() {
+
+export default function Home({slides}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,10 +16,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div style={{height: "700px"}}>
-          <h3 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Accueil!</a>
-          </h3>
+        <HeroSection slides={slides} />
+        <div style={{height: "500px"}}>
+                    
         </div>
 
         
@@ -24,4 +27,27 @@ export default function Home() {
       
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const slides0 = await Client().query(
+    Prismic.Predicates.at("document.type", "slides")
+  );
+
+  const slides = slides0.results.map(slide => {
+    const container = {};
+    container['id'] = slide.id;
+    container['title'] = slide.data.title[0].text;
+    container['caption'] = slide.data.caption[0].text;
+    container['picture'] = slide.data.picture.url;
+    return container;
+  })
+  console.log(slides);
+  
+  return {
+    props: {
+      slides,
+    },
+    revalidate: 10, // In seconds
+  }
 }
