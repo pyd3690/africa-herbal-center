@@ -36,7 +36,7 @@ export default function ProductRowSection(props) {
     return(
         <div className={styles.section}>
             <h2 className={styles.title}>Du Nouveau dans notre Boutique!</h2>
-            <Link href={"/store"}><h3 className={styles.action}>Visitez Notre Boutique</h3></Link>
+            <Link href={"/store"} passHref><h3 className={styles.action}>Visitez Notre Boutique</h3></Link>
             <div className={styles.container}>
                 {card_items}
             </div>

@@ -13,7 +13,7 @@ export default function COntactSection(props) {
     return(
         <div className={styles.section}>
             <div className={styles.container}>
-            <Jumbotron style={{backgroundColor:'#d8f0ea'}}>
+            <Jumbotron className={styles.jumbotron}>
                 <h2 className={styles.title}>Besoin d&apos;un traitement naturel ou d&apos;une consultation?</h2>
                 <h3 className={styles.action}>N&apos;hesitez pas a nous contacter</h3>
                 <p>

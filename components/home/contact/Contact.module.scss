@@ -6,7 +6,7 @@ $section-margin-top-mobile: 10px;
 $info-column-width: 40%;
 $info-column-width-mobile: 100%;
 
-$section-title-font-size-moblie: 27px;
+$section-title-font-size-moblie: 20px;
 $info-text-fontsize: 25px;
 $section-title-font-size-tablet: 22px;
 $info-text-fontsize-mobile: 20px;
@@ -46,6 +46,10 @@ $green-back-info: #d8f0ea;
     height: $height-section-content-desktop;
 }
 
+.jumbotron {
+    background-color:#d8f0ea;
+}
+
 @media (max-width: 1024px){
     .section{
         width: 90%;
@@ -81,5 +85,9 @@ $green-back-info: #d8f0ea;
 
     .action{
         font-size: $section-title-font-size-moblie;
+    }
+    
+    .jumbotron {
+        margin-bottom: 0;
     }
 }

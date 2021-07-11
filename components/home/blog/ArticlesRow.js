@@ -42,7 +42,7 @@ export default function ArticleRowSection(props) {
     return(
         <div className={styles.section}>
             <h2 className={styles.title}>Les derniers Updates dans notre Blog</h2>
-            <Link href={"/blog"}><h3 className={styles.action}>Decouvrez Notre Blog</h3></Link>
+            <Link href={"/blog"} passHref><h3 className={styles.action}>Decouvrez Notre Blog</h3></Link>
             <div className={styles.container}>
                 {card_items}
             </div>
