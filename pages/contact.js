@@ -2,7 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Blog() {
+import Prismic from "prismic-javascript";
+import { Client } from "../prismic-configuration.js";
+
+import CoverSection from '../components/cover/Cover.js'
+import ContactSection from '../components/contact/ContactSection.js'
+
+export default function Contact({coverPicture}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,16 +18,37 @@ export default function Blog() {
       </Head>
 
       <main className={styles.main}>
-        <div style={{height: "700px"}}>
-          <h3 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Contact!</a>
-          </h3>
-        </div>
-
-        
-      </main>
-
-      
+        <CoverSection imageData={coverPicture}/>
+        <ContactSection />
+        <div style={{height: "200px"}}>
+        </div>        
+      </main>      
     </div>
   )
 }
+
+export async function getStaticProps() {
+  const coverPicture0 = await Client().query(
+    Prismic.Predicates.at("document.type", "cover_contact")
+  );
+  const articles0 = await Client().query(
+    Prismic.Predicates.at("document.type", "article")
+  );
+
+  const coverPicture = coverPicture0.results.map(info => {
+    const container = {};
+    container['id'] = info.id;
+    container['url'] = info.data.picture.url;
+    return container;
+  })[0] 
+
+  //console.log(coverPicture);
+  
+  return {
+    props: {
+      coverPicture,
+    },
+    revalidate: 10, // In seconds
+  }
+}
+

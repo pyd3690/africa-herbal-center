@@ -20,6 +20,12 @@ $cover-caption-text-color: #274702;
     object-fit: cover;
 }
 
+@media (max-width: 1024px) {
+    .cover{
+        width: 95%;
+    }
+}
+
 @media (max-width: 767px){
     .cover{
         margin-top: 0;
