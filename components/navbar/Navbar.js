@@ -27,7 +27,7 @@ export default function NavBar(props) {
                         <Nav.Link href="#Home" className={styles.item}><span className={styles.link} id="home">Accueil</span></Nav.Link>
                     </Link>
                     <Link href="/store" passHref>
-                        <Nav.Link href="#Store" className={styles.item}><span className={styles.link} id="store">Boutique</span></Nav.Link>
+                        <Nav.Link href="#Store" className={styles.item}><span className={styles.link} id="store">Pharmacopée</span></Nav.Link>
                     </Link>
                     <Link href="/blog" passHref>
                         <Nav.Link href="#Blog" className={styles.item}><span className={styles.link} id="blog">Decouverte</span></Nav.Link>
