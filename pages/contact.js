@@ -6,7 +6,7 @@ import Prismic from "prismic-javascript";
 import { Client } from "../prismic-configuration.js";
 
 import CoverSection from '../components/cover/Cover.js'
-import ContactSection from '../components/contact/ContactSection.js'
+import ContactBlock from '../components/contact/ContactSection.js'
 
 export default function Contact({coverPicture}) {
   return (
@@ -19,7 +19,7 @@ export default function Contact({coverPicture}) {
 
       <main className={styles.main}>
         <CoverSection imageData={coverPicture}/>
-        <ContactSection />
+        <ContactBlock />
         <div style={{height: "200px"}}>
         </div>        
       </main>      
