@@ -10,7 +10,7 @@ export default function NavBar(props) {
 
     return(
         <Navbar collapseOnSelect expand="lg"  variant="light" className={styles.container}>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
                 <Image
                     src="/logo.png"
                     width="30"
