@@ -149,10 +149,10 @@ export default function ContactBlock() {
                     <div style={{}}>
                         <Image className={styles.iconC}
                             src="/icons/company.png"
-                            width="auto"
-                            height="20px"
-                            className="d-inline-block align-left"
-                            alt="Facebook Profile"                            
+                            width={20}
+                            height={20}
+                            //className="d-inline-block align-left"
+                            alt="Company"                            
                         /> 
                     </div>
                     <Link href="#"><div className={styles.listItemContent}>Africa Herbal Center</div></Link>
@@ -161,10 +161,10 @@ export default function ContactBlock() {
                     <div style={{}}>
                         <Image className={styles.iconC}
                             src="/icons/address.png"
-                            width="auto"
-                            height="20px"
-                            className="d-inline-block align-left"
-                            alt="Facebook Profile"                            
+                            width={20}
+                            height={20}
+                            //className="d-inline-block align-left"
+                            alt="Address"                            
                         /> 
                     </div>
                     <Link href="#"><div className={styles.listItemContent}>39 Rue AnimaBio Lomé, Quartier Bè Pa De Souza</div></Link>
@@ -173,10 +173,10 @@ export default function ContactBlock() {
                     <div style={{}}>
                         <Image className={styles.iconC}
                             src="/icons/phone.png"
-                            width="auto"
-                            height="20px"
-                            className="d-inline-block align-left"
-                            alt="Facebook Profile"                            
+                            width={20}
+                            height={20}
+                            //className="d-inline-block align-left"
+                            alt="Phone"                            
                         /> 
                     </div>
                     <Link href="#"><div className={styles.listItemContent}>+228 90 23 79 24 / +228 98 40 34 17</div></Link>
@@ -185,10 +185,10 @@ export default function ContactBlock() {
                     <div style={{}}>
                         <Image className={styles.iconC}
                             src="/icons/whatsapp.png"
-                            width="auto"
-                            height="20px"
-                            className="d-inline-block align-left"
-                            alt="Facebook Profile"                            
+                            width={20}
+                            height={20}
+                            //className="d-inline-block align-left"
+                            alt="Contact WhatsApp"                            
                         /> 
                     </div>
                     <Link href="#whatsapp"><div className={styles.listItemContent}>+228 90 23 79 24 / +228 98 40 34 17</div></Link>
@@ -197,9 +197,9 @@ export default function ContactBlock() {
                     <div style={{}}>
                         <Image className={styles.iconC}
                             src="/icons/facebook.png"
-                            width="auto"
-                            height="20px"
-                            className="d-inline-block align-left"
+                            width={20}
+                            height={20}
+                            //className="d-inline-block align-left"
                             alt="Facebook Profile"                        
                         /> 
                     </div>
@@ -209,10 +209,10 @@ export default function ContactBlock() {
                     <div style={{}}>
                         <Image className={styles.iconC}
                             src="/icons/email.png"
-                            width="auto"
-                            height="20px"
-                            className="d-inline-block align-left"
-                            alt="Facebook Profile"                            
+                            width={20}
+                            height={20}
+                            //className="d-inline-block align-left"
+                            alt="Email"                            
                         /> 
                     </div>
                     <Link href="#"><div className={styles.listItemContent}>Africa-herbal@gmail.com</div></Link>
