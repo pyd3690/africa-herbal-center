@@ -152,7 +152,7 @@ export default function ProductRowSection(props) {
         <Card.Title className={styles.cardTitle}>
             {RichText.render(card.name)}
         </Card.Title>
-        <Badge pill variant="info">
+        <Badge pill variant="info" style={{fontSize: 22}}>
             {RichText.render(card.category)}
         </Badge>
         {(card.price !== null && card.price !== undefined) &&
