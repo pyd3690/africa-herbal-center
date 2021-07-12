@@ -42,7 +42,7 @@ $green-back-info: #d8f0ea;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    height: $height-section-content-desktop;
+    height: auto; //$height-section-content-desktop;
 }
 
 .cardContainer{
@@ -77,7 +77,7 @@ $green-back-info: #d8f0ea;
     }
 
     .container{
-        height: $height-section-content-tablet;
+        height: auto; //$height-section-content-tablet;
         
     }
 

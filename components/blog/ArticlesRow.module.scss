@@ -7,6 +7,7 @@ $info-column-width: 40%;
 $info-column-width-mobile: 100%;
 
 $section-title-font-size-moblie: 27px;
+$section-action-font-size-moblie: 25px;
 $info-text-fontsize: 25px;
 $info-text-fontsize-mobile: 20px;
 
@@ -104,7 +105,7 @@ $green-back-info: #d8f0ea;
 
 @media (max-width: 767px){
     .section{
-        width: 100%;
+        width: 95%;
         margin-top: $section-margin-top-mobile;
     }
 
@@ -137,6 +138,6 @@ $green-back-info: #d8f0ea;
     }
 
     .action{
-        font-size: $section-title-font-size-moblie;
+        font-size: $section-action-font-size-moblie;
     }
 }

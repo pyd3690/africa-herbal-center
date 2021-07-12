@@ -4,6 +4,7 @@ import { RichText} from "prismic-reactjs"
 import styles from "./ProductRow.module.scss"
 
 
+
 export default function ProductRowSection(props) {
     const products = props.products;
     const card_items = products.map((card) =>
@@ -44,30 +45,3 @@ export default function ProductRowSection(props) {
     )
 }
 
-// const test = [
-//     {
-//         id: 1,
-//         name: "Revitalose Tonic",
-//         picture: "/products/p1.jpg",
-//         category: "brevage",
-//         price: "5000",
-//         description: "Manque d'appetit, Infections Severes, Regles douloureuses, vertiges",
-//     },
-//     {
-//         id: 2,
-//         name: "Tetra-Bio Forte",
-//         picture: "products/p2.jpg",
-//         category: "Gelules",
-//         price: "4500",
-//         description: "Hemorroides, Muges, Maux de ventre, infections vaginales, faiblesse sexuelle",
-//     },    
-//     {
-//         id: 3,
-//         name: "Pommade MALEPKO",
-//         picture: "products/p3.jpg",
-//         category: "Pommade",
-//         price: "3500",
-//         description: "Entorses, Maux de hanches, Genoux, Pieds d'athletes, Rhumatismes, la fievre",
-//     }
-
-// ];
