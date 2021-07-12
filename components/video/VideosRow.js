@@ -36,7 +36,7 @@ export default function VideoRowSection(props) {
                                  setActivePage(newActive); 
                                  setDataToShow(slices[newActive-1]); 
                              }}
-                             href={"#"+ number.toString()}
+                             href={"#videos-"+ number.toString()}
             >
                 {number}
             </Pagination.Item>,
@@ -55,7 +55,7 @@ export default function VideoRowSection(props) {
                     setDataToShow(slices[newActive-1]); 
                     //alert(activePage)
                 }}
-                href={"#"+ activePage.toString()}
+                href={"#videos-"+ activePage.toString()}
               />
               {items}
               <Pagination.Next 
@@ -68,7 +68,7 @@ export default function VideoRowSection(props) {
                     setDataToShow(slices[newActive-1]); 
                     //alert(activePage)
                 }}
-                href={"#"+ activePage.toString()}
+                href={"#videos-"+ activePage.toString()}
               />
           </Pagination>
         </div>

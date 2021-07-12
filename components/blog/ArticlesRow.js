@@ -34,7 +34,7 @@ export default function ArticleRowSection(props) {
                                  setActivePage(newActive); 
                                  setDataToShow(slices[newActive-1]); 
                              }}
-                             href={"#"+ number.toString()}
+                             href={"#articles-"+ number.toString()}
             >
                 {number}
             </Pagination.Item>,
@@ -53,7 +53,7 @@ export default function ArticleRowSection(props) {
                     setDataToShow(slices[newActive-1]); 
                     //alert(activePage)
                 }}
-                href={"#"+ activePage.toString()}
+                href={"#articles-"+ activePage.toString()}
               />
               {items}
               <Pagination.Next 
@@ -66,7 +66,7 @@ export default function ArticleRowSection(props) {
                     setDataToShow(slices[newActive-1]); 
                     //alert(activePage)
                 }}
-                href={"#"+ activePage.toString()}
+                href={"#articles-"+ activePage.toString()}
               />
           </Pagination>
         </div>
