@@ -9,28 +9,6 @@ import ReactPlayer from 'react-player'
 Moment.globalLocale = 'fr';
 
 
-const videos = [
-    {
-        id: 1,
-        url: "https://youtu.be/qg0pPWhfXq4",
-        title: "Atelier sur les plantes médicinales et leurs vertus, Togo/août 2019",
-        date: "07/05/2021",
-    },
-    {
-        id: 2,
-        url: "https://youtu.be/taZHxeyQS-I",
-        title: "Se soigner avec les plantes",
-        date: "07/07/2021",
-    },
-    {
-        id: 3,
-        url: "https://youtu.be/OBd-6LdKyTc",
-        title: "L'éjaculation précoce : Traitement définitif avec les plantes",
-        date: "07/09/2021",
-    },
-
-]
-
 export default function VideoRowSection(props) {
     const videos = props.videos;
     const card_items = videos.map((card) =>
@@ -55,7 +33,7 @@ export default function VideoRowSection(props) {
                 </Moment>
                 </Card.Text>
             }     
-            <a href={card.url /*"/products/"+card.id*/} target="_blank"> 
+            <a href={card.url /*"/products/"+card.id*/} target="_blank" rel="noreferrer"> 
                 <Button variant="success" >Voir</Button>
             </a>        
         </Card.Body>
@@ -73,30 +51,3 @@ export default function VideoRowSection(props) {
     )
 }
 
-// const test = [
-//     {
-//         id: 1,
-//         name: "Revitalose Tonic",
-//         picture: "/products/p1.jpg",
-//         category: "brevage",
-//         price: "5000",
-//         description: "Manque d'appetit, Infections Severes, Regles douloureuses, vertiges",
-//     },
-//     {
-//         id: 2,
-//         name: "Tetra-Bio Forte",
-//         picture: "products/p2.jpg",
-//         category: "Gelules",
-//         price: "4500",
-//         description: "Hemorroides, Muges, Maux de ventre, infections vaginales, faiblesse sexuelle",
-//     },    
-//     {
-//         id: 3,
-//         name: "Pommade MALEPKO",
-//         picture: "products/p3.jpg",
-//         category: "Pommade",
-//         price: "3500",
-//         description: "Entorses, Maux de hanches, Genoux, Pieds d'athletes, Rhumatismes, la fievre",
-//     }
-
-// ];
