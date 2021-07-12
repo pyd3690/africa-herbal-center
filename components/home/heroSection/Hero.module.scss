@@ -30,6 +30,7 @@ $carousel-caption-text-color: #274702;
 .carouselImage{
     width: auto;
     height: $height-carousel-desktop;
+    object-fit: cover;
 }
 
 .carouselCaption{
