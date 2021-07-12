@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Image, Card, Badge, Button} from "react-bootstrap"
+import {useState} from 'react'
+import { Image, Card, Pagination, Button} from "react-bootstrap"
 import { RichText} from "prismic-reactjs"
 import styles from "./VideosRow.module.scss"
 import Moment from "react-moment";
@@ -11,7 +12,69 @@ Moment.globalLocale = 'fr';
 
 export default function VideoRowSection(props) {
     const videos = props.videos;
-    const card_items = videos.map((card) =>
+    const pageLimit = 3;
+    let items = [];
+    const numberOfPages = Math.ceil(videos.length/pageLimit)
+
+    var slices = [];
+    for (let i = 0; i < numberOfPages; i++) {
+        var temp = videos;
+        slices.push(temp.slice(pageLimit*i, pageLimit*i + pageLimit))
+    }
+
+    const [dataToShow, setDataToShow] = useState(slices[0]);
+    const [activePage, setActivePage] = useState(1);
+
+    for (let number = 1; number <= numberOfPages; number++) {
+        items.push(
+            <Pagination.Item key={number} data-key={number} 
+                             active={number === activePage} 
+                             className={styles.paginationItem} 
+                             onClick={(e) => {
+                                 //alert(e.target.getAttribute('data-key'));
+                                 var newActive = parseInt(e.target.getAttribute('data-key'));
+                                 setActivePage(newActive); 
+                                 setDataToShow(slices[newActive-1]); 
+                             }}
+                             href={"#"+ number.toString()}
+            >
+                {number}
+            </Pagination.Item>,
+        );
+    }
+    const pagination = (
+        <div className={styles.pagination} >
+          <Pagination >
+              <Pagination.Prev 
+                onClick={(e) => {
+                    if (activePage == 1){
+                        return;
+                    }
+                    var newActive = activePage -1;
+                    setActivePage(newActive); 
+                    setDataToShow(slices[newActive-1]); 
+                    //alert(activePage)
+                }}
+                href={"#"+ activePage.toString()}
+              />
+              {items}
+              <Pagination.Next 
+                onClick={(e) => {
+                    if (activePage == numberOfPages){
+                        return;
+                    }
+                    var newActive = activePage+1;
+                    setActivePage(newActive); 
+                    setDataToShow(slices[newActive-1]); 
+                    //alert(activePage)
+                }}
+                href={"#"+ activePage.toString()}
+              />
+          </Pagination>
+        </div>
+      );
+
+    const card_items = dataToShow.map((card) =>
     <Card className={styles.cardContainer} key={card.id} >
         {/* <Card.Img variant="top" src={card.picture} className={styles.cardImg}/> */}
             <ReactPlayer
@@ -47,6 +110,7 @@ export default function VideoRowSection(props) {
             <div className={styles.container}>
                 {card_items}
             </div>
+            {pagination}
         </div>
     )
 }

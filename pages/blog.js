@@ -35,10 +35,12 @@ export async function getStaticProps() {
     Prismic.Predicates.at("document.type", "blog_cover")
   );
   const articles0 = await Client().query(
-    Prismic.Predicates.at("document.type", "article")
+    Prismic.Predicates.at("document.type", "article"),
+    { orderings : '[my.article.last_publication_date desc]' }
   );
   const videos0 = await Client().query(
-    Prismic.Predicates.at("document.type", "video")
+    Prismic.Predicates.at("document.type", "video"),
+    { orderings : '[my.video.date desc]' }
   );
 
   const coverPicture = coverPicture0.results.map(info => {
