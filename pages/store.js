@@ -43,7 +43,7 @@ export async function getStaticProps() {
     return container;
   })[0] 
 
-  const products = products0.results.slice(0, 3).map(info => {
+  const products = products0.results.map(info => {
     const container = {};
     container['id'] = info.id;
     container['name'] = info.data.name;
