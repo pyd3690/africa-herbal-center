@@ -9,9 +9,10 @@ import HeroSection from '../components/home/heroSection/Hero.js'
 import PresentationSection from '../components/home/presentation/Presentation.js'
 import ProductRowSection from '../components/home/products/ProductRow.js'
 import ArticleRowSection from '../components/home/blog/ArticlesRow.js'
+import VideoRowSection from '../components/home/video/VideosRow.js'
 import ContactSection from '../components/home/contact/Contact.js'
 
-export default function Home({slides, presentation, products, articles}) {
+export default function Home({slides, presentation, products, articles, videos}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -25,6 +26,7 @@ export default function Home({slides, presentation, products, articles}) {
         <PresentationSection information={presentation} />
         <ProductRowSection products={products} />
         <ArticleRowSection articles={articles} />
+        <VideoRowSection videos={videos} />
         <ContactSection />
         
       </main>
@@ -46,6 +48,9 @@ export async function getStaticProps() {
   );
   const articles0 = await Client().query(
     Prismic.Predicates.at("document.type", "article")
+  );
+  const videos0 = await Client().query(
+    Prismic.Predicates.at("document.type", "video")
   );
 
   const slides = slides0.results.map(slide => {
@@ -88,7 +93,18 @@ export async function getStaticProps() {
     container['content'] = info.data.content;
     return container;
   })
-  //console.log(products);
+
+  const videos = videos0.results.map(video => {
+    const container = {};
+    container['id'] = video.id;
+    container['title'] = video.data.title;
+    container['url'] = video.data.url.url;
+    container['date'] = video.data.date;
+
+    return container;
+  })
+
+  //console.log(videos);
   
   return {
     props: {
@@ -96,6 +112,7 @@ export async function getStaticProps() {
       presentation,
       products,
       articles,
+      videos,
     },
     revalidate: 10, // In seconds
   }
