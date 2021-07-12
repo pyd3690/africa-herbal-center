@@ -94,7 +94,7 @@ export async function getStaticProps() {
     return container;
   })
 
-  const videos = videos0.results.map(video => {
+  const videos = videos0.results.slice(0, 3).map(video => {
     const container = {};
     container['id'] = video.id;
     container['title'] = video.data.title;
