@@ -50,7 +50,8 @@ export async function getStaticProps() {
     Prismic.Predicates.at("document.type", "article")
   );
   const videos0 = await Client().query(
-    Prismic.Predicates.at("document.type", "video")
+    Prismic.Predicates.at("document.type", "video"),
+    { orderings : '[my.video.date desc]' }
   );
 
   const slides = slides0.results.map(slide => {
