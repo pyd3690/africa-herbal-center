@@ -7,9 +7,10 @@ import { Client } from "../prismic-configuration.js";
 
 import CoverSection from '../components/cover/Cover.js'
 import ArticleRowSection from '../components/blog/ArticlesRow.js'
+import VideoRowSection from '../components/video/VideosRow.js'
 
 
-export default function Store({coverPicture, articles}) {
+export default function Store({coverPicture, articles, videos}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,6 +22,7 @@ export default function Store({coverPicture, articles}) {
       <main className={styles.main}>
         <CoverSection imageData={coverPicture}/>
         <ArticleRowSection articles={articles} />
+        <VideoRowSection videos={videos} />
         <div style={{height: "200px"}}>
         </div>        
       </main>      
@@ -34,6 +36,9 @@ export async function getStaticProps() {
   );
   const articles0 = await Client().query(
     Prismic.Predicates.at("document.type", "article")
+  );
+  const videos0 = await Client().query(
+    Prismic.Predicates.at("document.type", "video")
   );
 
   const coverPicture = coverPicture0.results.map(info => {
@@ -55,12 +60,23 @@ export async function getStaticProps() {
     return container;
   })
 
+  const videos = videos0.results.map(video => {
+    const container = {};
+    container['id'] = video.id;
+    container['title'] = video.data.title;
+    container['url'] = video.data.url.url;
+    container['date'] = video.data.date;
+
+    return container;
+  })
+
   //console.log(coverPicture);
   
   return {
     props: {
       coverPicture,
       articles,
+      videos,
     },
     revalidate: 10, // In seconds
   }
