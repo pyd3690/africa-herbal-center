@@ -50,7 +50,7 @@ export async function getStaticProps() {
     return container;
   })[0] 
 
-  const articles = articles0.results.slice(0, 3).map(info => {
+  const articles = articles0.results.map(info => {
     const container = {};
     container['id'] = info.id;
     container['title'] = info.data.title;

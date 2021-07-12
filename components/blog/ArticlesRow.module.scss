@@ -74,6 +74,23 @@ $green-back-info: #d8f0ea;
     overflow: hidden;
 }
 
+.pagination{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.paginationItem{
+    border-radius: 5px;
+    margin-left:5px;
+    border-color: green;
+}
+
 @media (max-width: 1024px){
     .section{
         width: 90%;
