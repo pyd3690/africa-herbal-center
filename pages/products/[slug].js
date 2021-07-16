@@ -10,9 +10,9 @@ import ProductDetailsSection from '../../components/products/ProductDetails.js'
 
 
 export default function Product({product}) {
-    var title = product.slug;
-    if(product.slug === undefined){
-        title = " ";
+    var title = "";
+    if(product !== undefined){
+        title = product.slug;
     }
     //console.log(product)
   return (
