@@ -23,7 +23,7 @@ export default function PresentationSection(props) {
                 <div className={styles.PresentationText}>
                     <div 
                     className={styles.InfoText}>
-                        {RichText.render(info.text)}
+                        {RichText.asText(info.text)}
                         {/*info.text*/}
                         {/* Africa Herbal center est un centre de sante specialise dans les traitements traditionels a
                         base de plantes. 

@@ -14,7 +14,7 @@ export default function ContactBlock() {
       email: "username@example.com",
       subject: "renseignement",
       message: "",
-      ctype: "Requete/info",
+      ctype: "commande",
     });
     const [validated, setValidated] = useState(false);
     const [error, setError] = useState("");
@@ -51,22 +51,25 @@ export default function ContactBlock() {
         }
         setshowConfirmation(true)
 
-        /*
+        /* const data1 = {test: "submission"};
         console.log('sending client message');
-        const response = await fetch('https://anais-backend.herokuapp.com/messages', {
+        const response = await fetch('/api/hello', {
           method: "POST",
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
         });
-    
+        
+        var result = await response.json();
+        console.log(result);
+
         if (!response.ok) {
           setError(response.statusText);
           console.log(response.statusText);
         }
         else{
           setshowConfirmation(true)
-        } 
-        */   
+        }  */
+           
     }
 
     return(
@@ -106,9 +109,9 @@ export default function ContactBlock() {
                 <Form.Group className="mb-3">
                     <Form.Label className={styles.label}>Comment Vous Assister</Form.Label>
                     <Form.Control as="select" custom id="ctype" required onChange={onChange} value={type}>
-                    <option selected value='Requete/info'>Information</option>
-                    <option value='Suggestions'>Consultation</option>
-                    <option value='RDV'>Rendez Vous</option>
+                    <option selected value='commande'>Commande Personalisée</option>
+                    <option value='consultation'>Consultation</option>
+                    <option value='RDV'>RDV</option>
                     <option value='Autre'>Autre</option>
                     </Form.Control>
                     <Form.Control.Feedback type="invalid">
@@ -124,20 +127,20 @@ export default function ContactBlock() {
                     />
                 </Form.Group>
                 <Form.Group >
-                    <Form.Label className={styles.label}>Message</Form.Label>
+                    <Form.Label className={styles.label}>Méssage</Form.Label>
                     <Form.Control as="textarea" rows={3} id="message"  required onChange={onChange} />
                     <Form.Control.Feedback type="invalid">
-                    Entrer un message
+                    Entrer un méssage
                     </Form.Control.Feedback>
                 </Form.Group>
-                <Button variant="warning" type="submit" style={{marginBottom:'20px'}}>
+                <Button variant="success" type="submit" style={{marginBottom:'20px'}}>
                     Envoyer
                 </Button>
                 {showConfirmation && 
-                    <Alert variant="warning" onClose={() => setshowConfirmation(false)} dismissible autoFocus style={{marginTop: '10px', textAlign: 'center'}}>
-                        <Alert.Heading>Votre Message a bien ete envoye. <br />Nous vous contacterons bientot sur le {data.phone} ou via {data.email}.</Alert.Heading>
+                    <Alert variant="success" onClose={() => setshowConfirmation(false)} dismissible autoFocus style={{marginTop: '10px', textAlign: 'center'}}>
+                        <Alert.Heading>Votre Message a bien ete envoyé. <br />Nous vous contacterons bientot sur le {data.phone} ou via {data.email}.</Alert.Heading>
                         <Link href="/">
-                            <p style={{cursor: 'pointer', textDecoration: 'underline'}}>Continer Votre Visite &#62;</p>
+                            <p style={{cursor: 'pointer', textDecoration: 'underline'}}>Continueer Votre Visite &#62;</p>
                         </Link>
                     </Alert>
                 }
