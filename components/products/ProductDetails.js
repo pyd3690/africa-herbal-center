@@ -73,7 +73,7 @@ const ProductDetailsSection = (props) => {
                 }
                 {showNoPrice && 
                     <Alert variant="success" onClose={() => setshowNoPrice(false)} dismissible autoFocus style={{marginTop: '10px', textAlign: 'center'}}>
-                        <Alert.Heading>Ce Produit n'a pas de prix listé.</Alert.Heading>
+                        <Alert.Heading>Ce Produit n&apos;a pas de prix listé.</Alert.Heading>
                         <Link href="/contact">
                             <p style={{cursor: 'pointer', textDecoration: 'underline'}}>Contactez Nous pour plus the details &#62;</p>
                         </Link>
