@@ -71,10 +71,18 @@ export async function getStaticProps({params}) {
 
     return container;
   })
-
+  const productB = {
+      id: 0,
+      name: '',
+      picture: '',
+      category: '',
+      price: 0,
+      slug: 'slug',
+      description: ''
+  };
   //console.log(coverPicture);
-  const product = product1[0];
-  //console.log(product);
+  const product = (product1[0] === undefined)?productB:product1[0];
+  //console.log(products0.results);
 
   return {
     props: {
