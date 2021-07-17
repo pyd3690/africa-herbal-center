@@ -10,8 +10,16 @@ const ProductDetailsSection = (props) => {
     //const appContext = useContext(AppContext);
     const [showConfirmation, setshowConfirmation] = useState(false);
     const [showNoPrice, setshowNoPrice] = useState(false);
-    
-    const product_data = props.product
+    const productB = {
+        id: 0,
+        name: '',
+        picture: '',
+        category: '',
+        price: 0,
+        slug: 'slug',
+        description: ''
+    };
+    const product_data = (props.product === undefined)?productB:props.product; //props.product
 
     const price = (product_data.price === undefined || product_data.price === null) ? ' ---' : ' ' + product_data.price.toString() + " FCFA";
     const hasNoPrice = (product_data.price === undefined || product_data.price === null);
