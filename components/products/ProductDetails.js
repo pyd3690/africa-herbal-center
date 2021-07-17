@@ -36,7 +36,7 @@ const ProductDetailsSection = (props) => {
                 <div ><Image src={product_data.picture} fluid className={styles.cover}/></div>
                
                 <Link href="#cart">
-                    <h3 style={{cursor: 'pointer'}}>
+                    <h3 style={{cursor: 'pointer', textAlign: 'center'}}>
                         <Badge variant="info">{RichText.render(product_data.category)}</Badge>
                     </h3>
                 </Link>
@@ -55,21 +55,23 @@ const ProductDetailsSection = (props) => {
                     </InputGroup>
                 </div>
                 <div className={styles.contentDesc}>
-                    <h4>Description:</h4>
+                    {/* <h4 style={{textAlign: 'center'}}>Description:</h4> */}
                     {RichText.render(product_data.description)}
                 </div>
                 <Link href="#cart">
-                    <Button variant="success" style={{marginBottom: '20px'}} 
-                    onClick={() => {   
-                            /* const cartItem = Object.assign(product_data, {'sentQuantity': count});
-                            const isAdded = appContext.addItem(cartItem);
-                            if (!isAdded && hasNoPrice) {setshowNoPrice(true)} */
-                            setshowConfirmation(true/*isAdded*/);
+                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                        <Button variant="success" style={{marginBottom: '20px'}} 
+                        onClick={() => {   
+                                /* const cartItem = Object.assign(product_data, {'sentQuantity': count});
+                                const isAdded = appContext.addItem(cartItem);
+                                if (!isAdded && hasNoPrice) {setshowNoPrice(true)} */
+                                setshowConfirmation(true/*isAdded*/);
+                            }
                         }
-                    }
-                    >
-                        + Ajouter Au Panier
-                    </Button>
+                        >
+                            + Ajouter Au Panier
+                        </Button>
+                    </div>
                 </Link>
                 {showConfirmation && 
                     <Alert variant="success" onClose={() => setshowConfirmation(false)} dismissible autoFocus style={{marginTop: '10px', textAlign: 'center'}}>
