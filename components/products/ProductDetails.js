@@ -56,7 +56,8 @@ const ProductDetailsSection = (props) => {
                 </div>
                 <div className={styles.contentDesc}>
                     {/* <h4 style={{textAlign: 'center'}}>Description:</h4> */}
-                    {RichText.render(product_data.description)}
+                    {/* <RichText render={product_data.description} className={styles.desc}/> */}
+                    {RichText.asText(product_data.description)}
                 </div>
                 <Link href="#cart">
                     <div style={{display: 'flex', justifyContent: 'center'}}>
