@@ -206,7 +206,7 @@ export default function ContactBlock() {
                             alt="Facebook Profile"                        
                         /> 
                     </div>
-                    <div className={styles.listItemContent}><a href="https://www.facebook.com/groups/1635503100036114" target="_blank">Africa Herbal center Lomé Togo</a></div>
+                    <div className={styles.listItemContent}><a href="https://www.facebook.com/groups/1635503100036114" target="_blank" rel="noreferrer">Africa Herbal center Lomé Togo</a></div>
                 </ListGroup.Item>
                 <ListGroup.Item className={styles.listItem}>
                     <div style={{}}>
