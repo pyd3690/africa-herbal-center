@@ -158,7 +158,7 @@ export default function ContactBlock() {
                             alt="Company"                            
                         /> 
                     </div>
-                    <Link href="#"><div className={styles.listItemContent}>Africa Herbal Center</div></Link>
+                    <Link href="#"><div className={styles.listItemContent}>{'Africa Herbal Center'.toUpperCase()}</div></Link>
                 </ListGroup.Item>
                 <ListGroup.Item className={styles.listItem}>
                     <div style={{}}>
@@ -206,7 +206,11 @@ export default function ContactBlock() {
                             alt="Facebook Profile"                        
                         /> 
                     </div>
-                    <div className={styles.listItemContent}><a href="https://www.facebook.com/groups/1635503100036114" target="_blank" rel="noreferrer">Africa Herbal center Lomé Togo</a></div>
+                    <div className={styles.listItemContent}><a href="https://www.facebook.com/groups/1635503100036114" 
+                                                                target="_blank" rel="noreferrer" 
+                                                                style={{fontWeight: "bold", color: 'darkgreen', textDecoration: 'underline'}}>
+                        Africa Herbal center Lomé Togo
+                    </a></div>
                 </ListGroup.Item>
                 <ListGroup.Item className={styles.listItem}>
                     <div style={{}}>
@@ -218,7 +222,7 @@ export default function ContactBlock() {
                             alt="Email"                            
                         /> 
                     </div>
-                    <Link href="#"><div className={styles.listItemContent}>President@africa-herbal.com</div></Link>
+                    <div className={styles.listItemContent}><a href = "mailto: president@africa-herbal.com" style={{fontWeight: "bold", color: 'darkgreen', textDecoration: 'underline'}}>President@africa-herbal.com</a></div>
                 </ListGroup.Item>
             </ListGroup>
         </div>
