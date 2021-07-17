@@ -110,8 +110,8 @@ export default function ContactBlock() {
                     <Form.Label className={styles.label}>Comment Vous Assister</Form.Label>
                     <Form.Control as="select" custom id="ctype" required onChange={onChange} value={type}>
                     <option selected value='commande'>Commande Personalisée</option>
-                    <option value='consultation'>Consultation</option>
-                    <option value='RDV'>RDV</option>
+                    <option value='consultation'>Consultation/Diagnostic</option>
+                    <option value='donation'>Donnation</option>
                     <option value='Autre'>Autre</option>
                     </Form.Control>
                     <Form.Control.Feedback type="invalid">
@@ -206,7 +206,7 @@ export default function ContactBlock() {
                             alt="Facebook Profile"                        
                         /> 
                     </div>
-                    <Link href="https://www.facebook.com/anaisconceptbiz/" target="_blank"><div className={styles.listItemContent}>https://www.facebook.com/africaherbalcenter/</div></Link>
+                    <div className={styles.listItemContent}><a href="https://www.facebook.com/groups/1635503100036114" target="_blank">Africa Herbal center Lomé Togo</a></div>
                 </ListGroup.Item>
                 <ListGroup.Item className={styles.listItem}>
                     <div style={{}}>
@@ -218,7 +218,7 @@ export default function ContactBlock() {
                             alt="Email"                            
                         /> 
                     </div>
-                    <Link href="#"><div className={styles.listItemContent}>Africa-herbal@gmail.com</div></Link>
+                    <Link href="#"><div className={styles.listItemContent}>President@africa-herbal.com</div></Link>
                 </ListGroup.Item>
             </ListGroup>
         </div>
