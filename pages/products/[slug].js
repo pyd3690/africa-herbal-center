@@ -38,7 +38,7 @@ export async function getStaticPaths() {
     );
 
     const products = products0.results.map(info => (
-        info.slugs[0]
+        info.uid
     ))
     //console.log(products);
     const paths = products.map((productSlug) => ({
@@ -62,7 +62,7 @@ export async function getStaticProps({params}) {
     container['picture'] = info.data.picture.url;
     container['category'] = info.data.category;
     container['price'] = info.data.price;
-    container['slug'] = info.slugs[0];
+    container['slug'] = info.uid;
     container['description'] = info.data.description;
 
     if (container['slug'] === productSlug){
