@@ -97,19 +97,19 @@ export default function ProductRowSection(props) {
 
     for (let number = 1; number <= numberOfPages; number++) {
         items.push(
-            <Pagination.Item key={number} data-key={number} 
-                             active={number === activePage} 
-                             className={styles.paginationItem} 
-                             onClick={(e) => {
-                                 //alert(e.target.getAttribute('data-key'));
-                                 var newActive = parseInt(e.target.getAttribute('data-key'));
-                                 setActivePage(newActive); 
-                                 setDataToShow(slices[newActive-1]); 
-                             }}
-                             href={"#"+ number.toString()}
-            >
-                {number}
-            </Pagination.Item>,
+                <Pagination.Item key={number} data-key={number} 
+                                 active={number === activePage} 
+                                 className={styles.paginationItem} 
+                                 onClick={(e) => {
+                                     //alert(e.target.getAttribute('data-key'));
+                                     var newActive = parseInt(e.target.getAttribute('data-key'));
+                                     setActivePage(newActive); 
+                                     setDataToShow(slices[newActive-1]); 
+                                 }}
+                                 href="#store-New-Page" //href= {"#"+ number.toString()}
+                >
+                    {number}
+                </Pagination.Item>,
         );
     }
     const pagination = (
@@ -125,7 +125,7 @@ export default function ProductRowSection(props) {
                     setDataToShow(slices[newActive-1]); 
                     //alert(activePage)
                 }}
-                href={"#"+ activePage.toString()}
+                href="#store-New-Page" //href={"#"+ activePage.toString()}
               />
               {items}
               <Pagination.Next 
@@ -138,7 +138,7 @@ export default function ProductRowSection(props) {
                     setDataToShow(slices[newActive-1]); 
                     //alert(activePage)
                 }}
-                href={"#"+ activePage.toString()}
+                href="#store-New-Page" //href={"#"+ activePage.toString()}
               />
           </Pagination>
         </div>
@@ -174,8 +174,8 @@ export default function ProductRowSection(props) {
 
     return(
         <div className={styles.section}>
-            <h2 className={styles.title}>Pharmacopée</h2>
-            <Link href={"/store"} passHref><h3 className={styles.action}>Nos Produits</h3></Link>
+            <h2 className={styles.title} id="store-New-Page">Pharmacopée</h2>
+            <Link href={"/store"} passHref><h3 className={styles.action} >Nos Produits</h3></Link>
             <div className={styles.container}>
                 {card_items}
             </div>
