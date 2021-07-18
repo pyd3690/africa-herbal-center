@@ -3,6 +3,14 @@ import Link from 'next/link'
 import {Carousel, Image} from "react-bootstrap"
 import styles from "./Hero.module.scss"
 
+// const slides = [
+//     {
+//         id: 1,
+//         picture: "/cover/cover1.jpg",
+//         title: "Test Test Test Test Test Test Test Test Test TestTestTestTestTestTestTestTest",
+//         caption: "Test Test Test Test Test Test Test Test Test TestTestTestTestTestTestTestTest Test Test Test Test Test Test Test Test Test TestTestTestTestTestTestTestTest Test Test Test Test Test Test Test Test Test TestTestTestTestTestTestTestTest Test Test Test Test Test Test Test Test Test TestTestTestTestTestTestTestTest Test Test Test Test Test Test Test Test Test TestTestTestTestTestTestTestTest Test Test Test Test Test Test Test Test Test TestTestTestTestTestTestTestTest",
+//     },
+// ]
 
 export default function HeroSection(props) {
     const slides = props.slides;
@@ -17,7 +25,7 @@ export default function HeroSection(props) {
                 />
                 {(slide.title != "none" || slide.caption != "none") && <Carousel.Caption className={styles.carouselCaption}>
                 <h3 className={styles.captionTitle}>{slide.title}</h3>
-                <p>{slide.caption}</p>
+                <p className={styles.captionText}>{slide.caption}</p>
                 </Carousel.Caption>}
             </div>
         </Carousel.Item >
