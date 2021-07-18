@@ -31,8 +31,8 @@ $green-back-info: #d8f0ea;
 .action{
     text-align: center;
     color: green; //$carousel-caption-text-color;
-    margin-bottom: 30px;
-    font-weight: 300;
+    margin-bottom: 20px;
+    font-weight: bold;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -137,6 +137,7 @@ $green-back-info: #d8f0ea;
     }
 
     .action{
-        font-size: $section-title-font-size-moblie;
+        font-size: 20px; //$section-title-font-size-moblie;
+        font-weight: bold;
     }
 }
