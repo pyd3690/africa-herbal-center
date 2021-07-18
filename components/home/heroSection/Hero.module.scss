@@ -35,14 +35,14 @@ $carousel-caption-text-color: #274702;
 
 .carouselCaption{
     background-color: rgb(74, 97, 48, 0.7);
-    width: 600px;
+    //width: 600px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
     height: $height-carousel-desktop * 0.4;
 }
 
-@media (max-width: 767px){
+@media (max-width: 599px){
     .carousel{
         height: $height-carousel-item-phone;
     }
