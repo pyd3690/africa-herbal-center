@@ -41,7 +41,7 @@ $green-back-info: #d8f0ea;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: auto; //$height-section-content-desktop;
 }
 
@@ -49,6 +49,7 @@ $green-back-info: #d8f0ea;
     width: 28%;
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 10px;
     height: $height-section-content-desktop;
 }
 .cardImg{
@@ -125,6 +126,7 @@ $green-back-info: #d8f0ea;
 
     .container{
         height: auto;
+        justify-content: space-around;
     }
 
     .title{

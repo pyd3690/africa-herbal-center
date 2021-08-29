@@ -12,7 +12,7 @@ Moment.globalLocale = 'fr';
 
 export default function VideoRowSection(props) {
     const videos = props.videos;
-    const pageLimit = 3;
+    const pageLimit = 6;
     let items = [];
     const numberOfPages = Math.ceil(videos.length/pageLimit)
 
@@ -106,7 +106,7 @@ export default function VideoRowSection(props) {
     return(
         <div className={styles.section}>
             <h2 className={styles.title}>Notre Mediatheque rien que pour vous</h2>
-            <Link href={"/blog"} passHref><h3 className={styles.action}>Nos videos</h3></Link>
+            <Link href={"/videos"} passHref><h3 className={styles.action}>Nos videos</h3></Link>
             <div className={styles.container}>
                 {card_items}
             </div>

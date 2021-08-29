@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import {Navbar, Nav} from "react-bootstrap"
+import {Navbar, Nav, NavDropdown} from "react-bootstrap"
 import styles from "./Navbar.module.scss"
 
 export default function NavBar(props) {
@@ -29,9 +29,18 @@ export default function NavBar(props) {
                     <Link href="/store" passHref>
                         <Nav.Link href="/store" className={styles.item}><span className={styles.link} id="store">Pharmacopée</span></Nav.Link>
                     </Link>
-                    <Link href="/blog" passHref>
+                    {/* <Link href="/blog" passHref>
                         <Nav.Link href="/blog" className={styles.item}><span className={styles.link} id="blog">Decouverte</span></Nav.Link>
-                    </Link>
+                    </Link> */}
+                    
+                    <NavDropdown title="Decouverte" id="basic-nav-dropdown" className={styles.link}>
+                        <Link href="/videos" passHref>
+                            <NavDropdown.Item href="/videos" className={styles.item}><span className={styles.link} id="Videos">Videos</span></NavDropdown.Item>
+                        </Link>
+                        <Link href="/blog" passHref>
+                            <NavDropdown.Item href="/blog" className={styles.item}><span className={styles.link} id="blog">Blog</span></NavDropdown.Item>
+                        </Link>
+                    </NavDropdown>
                     <Link href="/contact" passHref>
                         <Nav.Link href="/contact" className={styles.item}><span className={styles.link} id="contact">Contact</span></Nav.Link>
                     </Link>

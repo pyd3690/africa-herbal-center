@@ -10,7 +10,7 @@ Moment.globalLocale = 'fr';
 
 export default function ArticleRowSection(props) {
     const articles = props.articles;
-    const pageLimit = 3;
+    const pageLimit = 6;
     let items = [];
     const numberOfPages = Math.ceil(articles.length/pageLimit)
 
@@ -107,8 +107,8 @@ export default function ArticleRowSection(props) {
         <div className={styles.section}>
             <h2 className={styles.title}>A la Decouverte du Monde des Plantes</h2>
             <Link href={"/blog"} passHref><h3 className={styles.action}>Nos Articles</h3></Link>
-            <div className={styles.container}>
-                {card_items}
+            <div className={styles.Mcontainer}>
+                <div className={styles.container}>{card_items}</div>
             </div>
             {pagination}
         </div>
