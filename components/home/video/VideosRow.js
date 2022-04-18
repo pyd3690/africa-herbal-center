@@ -43,7 +43,7 @@ export default function VideoRowSection(props) {
     return(
         <div className={styles.section}>
             <h2 className={styles.title}>Nos dernieres Videos</h2>
-            <Link href={"/blog"} passHref><h3 className={styles.action}>Voir toutes nos videos</h3></Link>
+            <Link href={"/videos"} passHref><h3 className={styles.action}>Voir toutes nos videos</h3></Link>
             <div className={styles.container}>
                 {card_items}
             </div>
